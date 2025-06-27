@@ -20,7 +20,7 @@ public class Main {
             IDcounter = reader.nextInt();
 
 
-        } catch (Exception e) {
+        } catch (Exception ignored) {
 
         }
         while (!userInput.equals("exit")) {
@@ -44,7 +44,7 @@ public class Main {
                     FileWriter writer = new FileWriter(IDcounter + ".txt");
                     writer.write(userInput);
                     writer.close();
-                } catch (java.io.IOException e) {
+                } catch (java.io.IOException ignored) {
                 }
 
             } else if (userInput.startsWith("view")) {
@@ -57,7 +57,7 @@ public class Main {
                         File read = new File("currentID.txt");
                         Scanner show = new Scanner(read);
                         counter = Integer.parseInt(show.nextLine());
-                    } catch (java.io.FileNotFoundException e) {
+                    } catch (java.io.FileNotFoundException ignored) {
                     }
                     for (int i = 1; i <= counter; i++) {
                         System.out.print("note " + i + " : ");
@@ -71,7 +71,7 @@ public class Main {
                                 Scanner show = new Scanner(read);
                                 System.out.println(show.nextLine());
                             }
-                        } catch (java.io.FileNotFoundException e) {
+                        } catch (java.io.FileNotFoundException ignored) {
                         }
 
                     }
@@ -84,7 +84,7 @@ public class Main {
                         System.out.println(note);
                         show.close();
 
-                    } catch (java.io.FileNotFoundException e) {
+                    } catch (java.io.FileNotFoundException ignored) {
                     }
                 }
 
