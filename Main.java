@@ -26,7 +26,7 @@ public class Main {
         while (!userInput.equals("exit")) {
             userInput = input.nextLine();
             if (userInput.equals("commands")) {
-                System.out.println("these are the commands:\nadd\nview\ndelete\nexit");
+                System.out.println("these are the commands:\nadd <note>\nview <ID> or view all\ndelete <ID>\nexit");
 
             }
 
@@ -51,8 +51,9 @@ public class Main {
                 userInput = userInput.replaceFirst("view", "");
                 userInput = userInput.trim();
                 // check if its empty, if so then show every single note.
-                if (userInput.isEmpty()) {
+                if (userInput.equalsIgnoreCase("all")) {
                     int counter = 0;
+
                     try {
                         File read = new File("currentID.txt");
                         Scanner show = new Scanner(read);
