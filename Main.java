@@ -1,6 +1,4 @@
-import javax.swing.*;
-import java.util.HashSet;
-import java.util.Random;
+
 import java.util.Scanner;
 import java.io.File;
 import java.io.IOException;
@@ -31,8 +29,17 @@ public class Main {
             } else if (userInput.startsWith("view")) {
                 obj.view(userInput, IDcounter);
             }
-            if (userInput.startsWith("delete")) {
+            else if(userInput.equalsIgnoreCase("delete all")){
+                obj.deleteAll(userInput,IDcounter);
+            }
+            else if (userInput.startsWith("delete")) {
                 obj.delete(userInput, IDcounter);
+            }
+            else {
+                if (userInput.equals("exit")) {
+                } else {
+                    System.out.println("\"" + userInput + "\" is not a valid command!");
+                }
             }
         }
     }

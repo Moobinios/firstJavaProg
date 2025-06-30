@@ -86,4 +86,18 @@ public class Note {
             }
         }
     }
+    public void deleteAll(String note, int c) {
+
+            for(int i = 1;i<=c;i++){
+                File deleting = new File(i+".txt");
+                deleting.delete();
+        }
+        try{
+            FileWriter reset = new FileWriter("currentID.txt");
+            reset.write("0");
+            reset.close();
+        }catch(java.io.IOException ignored){
+        }
+        System.out.println("deleted all notes !");
+    }
 }
