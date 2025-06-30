@@ -23,7 +23,7 @@ public class Main {
             }
             userInput = input.nextLine();
             if (userInput.equals("commands")) {
-                System.out.println("add\nview\ndelete\nexit");
+                System.out.println("add *note* -> adds a note to the system.\nview *ID* or view *blank* to either view a note by its ID or view alone to see all the current notes.\ndelete *ID* \ndelete all\nexit");
             } else if (userInput.startsWith("add")) {
                 obj.add(userInput, IDcounter);
             } else if (userInput.startsWith("view")) {
